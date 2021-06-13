@@ -19,10 +19,10 @@
         </div>
         <div class="form-group">
         <label>Ciudad</label>
-        <input type="text" name="Ciudad" class="form-control" value="Ingrese una cuidad">
+        <input type="text" name="ciudad" class="form-control" value="Ingrese una cuidad">
         </div>
         <div class="form-group">
-        <button type="submit" class="btn btn-primary" name="Crear">Crear</button>
+        <button type="submit" class="btn btn-primary" name="crear">Crear</button>
         </div>
     </form>
     </div>
