@@ -11,6 +11,19 @@
 </head>
 <body>
     <?php require_once 'proceso.php'; ?>
+
+    <?php
+
+    if (isset($_SESSION['message'])): ?>
+
+    <div class="alert alert-<?=$_SESSION['msg_type']?>">
+
+    <?php 
+    echo $_SESSION['message'];
+    unset($_SESSION['message']);
+    ?>
+    </div>
+    <?php endif ?>
     <div class="container">
     <?php
     $mysqli = new mysqli('localhost','root','','BD_TODOLIST') or die(mysqli_error($mysqli)); 
