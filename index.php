@@ -62,6 +62,7 @@
 
     <div class="row justify-content-center">
     <form action="proceso.php" method="POST">
+        <input type="hidden" name="id" value="<?php echo $id; ?>">
         <div class="form-group">
         <label>Nombre</label>
         <input type="text" name="nombre" class="form-control" value="<?php echo $nombre; ?>" placeholder="Ingrese un nombre">
