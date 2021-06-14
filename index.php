@@ -31,7 +31,10 @@
             <tr>
                 <td> <?php echo $row['nombre']; ?> </td>
                 <td> <?php echo $row['ciudad']; ?> </td>
-                <td></td>
+                <td>
+                    <a href="index.php?edit=<?php echo $row['ID']; ?>" class="btn btn-info">Editar</a>
+                    <a href="proceso.php?delete=<?php echo $row['ID']; ?>" class="btn btn-danger">Eliminar</a>
+                </td>
             </tr>
             <?php endwhile; ?>
         </table>
