@@ -11,20 +11,54 @@
 </head>
 <body>
     <?php require_once 'proceso.php'; ?>
+    <div class="container">
+    <?php
+    $mysqli = new mysqli('localhost','root','','BD_TODOLIST') or die(mysqli_error($mysqli)); 
+    $result = $mysqli -> query("SELECT * FROM LISTA") or die($mysqli->error);
+    //pre_r($result);
+    ?>
+    <div class="row justify-content-center">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Ciudad</th>
+                    <th colspan="2">Acción</th>
+                </tr>
+            </thead>
+            <?php
+            while ($row = $result->fetch_assoc()): ?>
+            <tr>
+                <td> <?php echo $row['nombre']; ?> </td>
+                <td> <?php echo $row['ciudad']; ?> </td>
+                <td></td>
+            </tr>
+            <?php endwhile; ?>
+        </table>
+    </div>
+    <?php
+    function pre_r($array) {
+        echo '<pre>';
+        print_r($array);
+        echo '</pre>';
+    }
+    ?>
+
     <div class="row justify-content-center">
     <form action="proceso.php" method="POST">
         <div class="form-group">
         <label>Nombre</label>
-        <input type="text" name="nombre" class="form-control" value="Ingrese un nombre">
+        <input type="text" name="nombre" class="form-control" placeholder="Ingrese un nombre">
         </div>
         <div class="form-group">
         <label>Ciudad</label>
-        <input type="text" name="ciudad" class="form-control" value="Ingrese una cuidad">
+        <input type="text" name="ciudad" class="form-control" placeholder="Ingrese una cuidad">
         </div>
         <div class="form-group">
         <button type="submit" class="btn btn-primary" name="crear">Crear</button>
         </div>
     </form>
+    </div>
     </div>
     
 </body>
