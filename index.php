@@ -64,14 +64,20 @@
     <form action="proceso.php" method="POST">
         <div class="form-group">
         <label>Nombre</label>
-        <input type="text" name="nombre" class="form-control" placeholder="Ingrese un nombre">
+        <input type="text" name="nombre" class="form-control" value="<?php echo $nombre; ?>" placeholder="Ingrese un nombre">
         </div>
         <div class="form-group">
         <label>Ciudad</label>
-        <input type="text" name="ciudad" class="form-control" placeholder="Ingrese una cuidad">
+        <input type="text" name="ciudad" class="form-control" value="<?php echo $ciudad; ?>" placeholder="Ingrese una cuidad">
         </div>
         <div class="form-group">
+            <?php
+            if ($update == true):
+            ?>
+            <button type="submit" class="btn btn-info" name="actualizar">Actualizar</button>
+            <?php else: ?>
         <button type="submit" class="btn btn-primary" name="crear">Crear</button>
+        <?php endif; ?>
         </div>
     </form>
     </div>
