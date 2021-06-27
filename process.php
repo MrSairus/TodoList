@@ -15,20 +15,20 @@ if (isset($_POST['save'])){
 
     $mysqli->query("INSERT INTO data (name, location) VALUES('$name', '$location')") or die($mysqli->error);
 
-    $_SESSION['message'] = "Record has been saved!";
+    $_SESSION['message'] = "El registro se ha guardado!";
     $_SESSION['msg_type'] = "success";
 
-    header('location: index.php');
+    header('location: indexT.php');
 }
 
 if (isset($_GET['delete'])){
     $id = $_GET['delete'];
     $mysqli->query("DELETE FROM data WHERE id=$id") or die($mysqli->error());
 
-    $_SESSION['message'] = "Record has been deleted!";
+    $_SESSION['message'] = "El registro ha sido eliminado!";
     $_SESSION['msg_type'] = "danger";
 
-    header('location: index.php');
+    header('location: indexT.php');
 }
 
 if (isset($_GET['edit'])){
@@ -48,8 +48,8 @@ if (isset($_POST['update'])){
 
     $mysqli->query("UPDATE data SET name='$name', location='$location' WHERE id=$id") or die($mysqli->error);
 
-    $_SESSION['message'] = "Record has been updated!";
+    $_SESSION['message'] = "Se actualizó el registro!";
     $_SESSION['msg_type'] = "warning";
 
-    header('location: index.php');
+    header('location: indexT.php');
 }

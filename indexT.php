@@ -34,9 +34,9 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Location</th>
-                        <th colspan="2">Action</th>
+                        <th>Nombre</th>
+                        <th>Tarea</th>
+                        <th colspan="2">Acciones</th>
                     </tr>
                 </thead>
         <?php
@@ -45,10 +45,10 @@
                     <td><?php echo $row['name']; ?></td>
                     <td><?php echo $row['location']; ?></td>
                     <td>
-                        <a href="index.php?edit=<?php echo $row['id']; ?>"
-                            class="btn btn-info">Edit</a>
+                        <a href="indexT.php?edit=<?php echo $row['id']; ?>"
+                            class="btn btn-info">Editar</a>
                         <a href="process.php?delete=<?php echo $row['id']; ?>"
-                            class="btn btn-danger">Delete</a>
+                            class="btn btn-danger">Eliminar</a>
                     </td>
                 </tr>
             <?php endwhile; ?>   
@@ -66,20 +66,20 @@
     <form action="process.php" method="POST">
         <input type="hidden" name="id" value="<?php echo $id; ?>">
         <div class="form-group">
-        <label>Name</label>
-        <input type="text" name="name" class="form-control" value="<?php echo $name; ?>" placeholder="Enter your name">
+        <label>Nombre</label>
+        <input type="text" name="name" class="form-control" value="<?php echo $name; ?>" placeholder="Ingresa tu nombre" required>
         </div>
         <div class="form-group">
-        <label>Location</label>
-        <input type="text" name="location" class="form-control" value="<?php echo $location; ?>" placeholder="Enter your location">
+        <label>Tarea</label>
+        <input type="text" name="location" class="form-control" value="<?php echo $location; ?>" placeholder="Ingrese su tarea" required>
         </div>
         <div class="form-group">
         <?php
         if ($update == true):
         ?>
-        <button type="submit" class="btn btn-info" name="update">Update</button>
+        <button type="submit" class="btn btn-info" name="update">Actualizar</button>
         <?php else: ?>   
-        <button type="submit" class="btn btn-primary" name="save">Save</button>
+        <button type="submit" class="btn btn-primary" name="save">Crear</button>
         <?php endif; ?>
         </div>        
     </form>
